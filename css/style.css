@@ -1,0 +1,357 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.game-board{
+    width: 100%;
+    border-bottom: 25px solid rgb(238, 184, 77);
+    background: black;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+span i{
+    color: white;
+}
+
+.nuvem{
+    position: absolute;
+    width: 300px;
+    animation: nuvem-animation 10s infinite linear;
+}    
+
+@keyframes nuvem-animation {
+    from {
+    right: -550px;
+    }
+    to {
+    right: 100%;
+    }
+}
+
+.nuvem2{
+    position: absolute;
+    top: 150px;
+    width: 400px;
+    animation: nuvem-animation 7s infinite linear;
+}    
+
+@keyframes nuvem-animation {
+    from {
+    right: -550px;
+    }
+    to {
+    right: 100%;
+    }
+}
+
+.tijolo{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: tijolo-animation 2s infinite linear;
+}
+
+@keyframes tijolo-animation {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+.ralph{
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+}
+
+.pulo{
+    animation: ralph-animation 500ms ease-out;
+}
+
+@keyframes ralph-animation{
+    0%{
+        bottom: 150;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 200px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes ralph-venceu{
+    0%{
+        left: 0px;
+    }
+
+    50%{
+        left: 250px;
+    }
+
+    100%{
+        left: 500px;
+    }
+}
+
+.contador{
+    color: white;
+    font-size: 1.2em;
+    position: absolute;
+    left: 1100px;
+    top: 30px;
+}
+
+/* ------------------------------------- */
+
+.popup{
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(17, 17, 17);
+    border: solid gray 1px;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    animation: popup 500ms ease-in;
+}
+
+@keyframes popup{
+    0%{
+        width: 300px;
+    }
+
+    50%{
+        width: 400px;
+    }
+
+    100%{
+        bottom: 500px;
+    }
+}
+
+.conteudo{
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo #gameover{
+    animation: logoanimation 3s infinite;
+}
+
+@keyframes gameoveranimation{
+    0%{
+        transform: translateX(0) scale(0.8);
+    }
+    50%{
+        transform: translateX(0) scale(1.1);
+    }
+    100%{
+        transform: translateX(0) scale(0.9);
+    }
+}
+
+.popup p{
+    text-align: center;
+    font-size: 5em;
+    color: rgb(184, 0, 0);
+}
+
+.popup i{
+    font-size: 3em;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#menu div{
+    display: flex;
+}
+
+#menu p{
+    color: white;
+    font-size: 1.5em;
+    left: 1100px;
+    top: 30px;
+    width: 100%;
+}
+
+#menu a{
+    display: inline-flex;
+    color: white;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(184, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 30px;
+}
+
+.botoes{
+    color: white;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(184, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+#play{
+    position: absolute;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    cursor: pointer;
+}
+
+#play i{
+    font-size: 3em;
+}
+
+/* DEFINIÇÕES PÁGINA INICIAL */
+
+.index{
+    width: 100%;
+    background: black;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo_ralph{
+    transform: translateX(0) scale(0.5);
+    animation: logoanimation 3s infinite;
+}
+
+@keyframes logoanimation{
+    0%{
+        transform: translateX(0) scale(1);
+    }
+    50%{
+        transform: translateX(0) scale(1.1);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+}
+
+.menusao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menusao a{
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    background-color: rgb(184, 0, 0);
+    color: white;
+    margin: 50px;
+    width: 200px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.menusao a:hover{
+    background-color: rgb(138, 0, 0);
+    color: rgb(230, 230, 230);
+    animation: botao 1s infinite;
+}
+
+@keyframes botao{
+    0%{
+        width: 200px;
+        transform: translateX(0) scale(1);
+    }
+
+    50%{
+        width: 210px;
+        transform: translateX(0) scale(1.1);
+    }
+
+    100%{
+        width: 200px;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.tijoloindex{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 500px;
+    width: 80px;
+    animation: tijolo-animations 2.9s infinite linear;
+}
+
+.tijoloindex_{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 500px;
+    width: 80px;
+    animation: tijolo-animations 3.2s infinite linear;
+}
+
+@keyframes tijolo-animations {
+    from{
+        top: -200px;
+    }
+
+    to{
+        top: 120%;
+    }
+}
+
